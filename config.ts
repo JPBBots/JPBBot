@@ -1,11 +1,11 @@
+import * as sensitive from './config.json'
 export const Config = {
-  token: '',
-  dblAuth: '',
-  ...require('./config.json'),
+  ...sensitive,
   admin: '415323805943070721',
   guild: '399688888739692552',
   premium: {
     '617037486719238185': 3, // patron
+    '798800694303260703': 3, // super supporter
     '621810419643973642': 1, // booster
     '651523919962177546': 1, // premium
     '623947910274482177': 1, // senior helper
