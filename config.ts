@@ -8,7 +8,8 @@ export const Config = {
     '798800694303260703': 3, // super supporter
     '621810419643973642': 1, // booster
     '651523919962177546': 1, // premium
-    '623947910274482177': 1, // senior helper
+    '623847631566798868': 1, // helper
+    '623947910274482177': 2, // senior helper
     '623847890628116504': 99, // head helper
     '798393980495724564': 1000000 // million servers
   },
