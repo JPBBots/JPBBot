@@ -25,6 +25,6 @@ export async function Api (client: JPBBot) {
 
   app.use('/api', mainRouter)
 
-  await new Promise(resolve => app.listen(6721, () => resolve()))
+  await new Promise(resolve => app.listen(6721, () => resolve(true)))
   console.log('Loaded API')
 }
