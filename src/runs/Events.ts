@@ -1,5 +1,6 @@
 import { JPBBot } from '../structs/JPBBot'
 import * as  Discord from 'discord.js'
+import { Snowflake } from 'discord-api-types'
 
 export function SetupEvents (client: JPBBot) {
   // premium

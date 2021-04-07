@@ -9,6 +9,7 @@ import { Api } from '../api/Api'
 
 import { PremiumManager } from './PremiumManager'
 import { TagManager } from './TagManager'
+import { Snowflake } from 'discord.js'
 
 export class JPBBot extends Discord.Client {
   config: typeof Config

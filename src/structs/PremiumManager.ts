@@ -1,5 +1,6 @@
 import { JPBBot } from './JPBBot'
 import MongoCollection from 'mongodb/lib/collection'
+import { Snowflake } from 'discord.js'
 
 export class PremiumManager {
   client: JPBBot

@@ -1,10 +1,11 @@
-import Express from 'express'
+import E from 'express'
 import { JPBBot } from '../../structs/JPBBot'
 
 import * as Topgg from '@top-gg/sdk'
 import { MessageEmbed, GuildMember } from 'discord.js'
+import { WebhookPayload } from '@top-gg/sdk/dist/typings'
 
-export default function (client: JPBBot, router: Express.Router) {
+export default function (client: JPBBot, router: E.Router) {
   router.get('/admin/:id', async (req, res) => {
     res.send(`${await client.isAdmin(req.params.id) ? 1 : 0}`)
   })
@@ -16,6 +17,7 @@ export default function (client: JPBBot, router: Express.Router) {
   const wh = new Topgg.Webhook(client.config.dblAuth)
 
   router.post('/dblwebhook', wh.middleware(), async (req, res) => {
+    // @ts-ignore
     const member: GuildMember | false = await client.guild.members.fetch(req.vote.user).catch(() => false)
     console.log(member ? `Vote from ${member.user.tag}` : `Vote from ${req.body.user} (not in server)`)
  
@@ -47,6 +49,7 @@ export default function (client: JPBBot, router: Express.Router) {
         .setColor('GREEN')
         .setTitle(`Thanks ${member.user.tag} for voting!`)
         .setDescription(`${amount} total votes!`)
+        // @ts-ignore
         .addField('Voted For', `<@${req.vote.bot}>`, true)
         .addField('Next Role', `<@&${nextRole[0]}> (${Number(nextRole[1]) - amount} more!)`, true)
         .setFooter('Vote for any of the 4 bots to receive role rewards!')
