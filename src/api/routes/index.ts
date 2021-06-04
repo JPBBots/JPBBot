@@ -1,9 +1,8 @@
 import E from 'express'
 import { JPBBot } from '../../structs/JPBBot'
 
-import * as Topgg from '@top-gg/sdk'
+import { Webhook } from '@top-gg/sdk'
 import { MessageEmbed, GuildMember } from 'discord.js'
-import { WebhookPayload } from '@top-gg/sdk/dist/typings'
 
 export default function (client: JPBBot, router: E.Router) {
   router.get('/admin/:id', async (req, res) => {
@@ -14,16 +13,16 @@ export default function (client: JPBBot, router: E.Router) {
     res.send(`${await client.premium.amount(req.params.id)}`)
   })
 
-  const wh = new Topgg.Webhook(client.config.dblAuth)
+  const wh = new Webhook(client.config.dblAuth)
 
-  router.post('/dblwebhook', wh.middleware(), async (req, res) => {
+  router.post('/dblwebhook', wh.listener(async (vote) => {
     // @ts-ignore
-    const member: GuildMember | false = await client.guild.members.fetch(req.vote.user).catch(() => false)
-    console.log(member ? `Vote from ${member.user.tag}` : `Vote from ${req.body.user} (not in server)`)
+    const member: GuildMember | false = await client.guild.members.fetch(vote.user).catch(() => false)
+    console.log(member ? `Vote from ${member.user.tag}` : `Vote from ${vote.user} (not in server)`)
  
-    await client.db.collection('voters', null, null).updateOne({ id: req.body.user }, {
+    await client.db.collection('voters', null, null).updateOne({ id: vote.user }, {
       $set: {
-        id: req.body.user
+        id: vote.user
       },
       $inc: {
         amount: 1
@@ -50,11 +49,11 @@ export default function (client: JPBBot, router: E.Router) {
         .setTitle(`Thanks ${member.user.tag} for voting!`)
         .setDescription(`${amount} total votes!`)
         // @ts-ignore
-        .addField('Voted For', `<@${req.vote.bot}>`, true)
+        .addField('Voted For', `<@${vote.bot}>`, true)
         .addField('Next Role', `<@&${nextRole[0]}> (${Number(nextRole[1]) - amount} more!)`, true)
         .setFooter('Vote for any of the 4 bots to receive role rewards!')
     )
-  })
+  }))
 
   router.post('/', (req, res) => {
     console.log(req.body)

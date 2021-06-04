@@ -2,7 +2,9 @@ import * as Discord from 'discord.js'
 import MongoDb from 'mongodb/lib/db'
 import { Config } from '../../config'
 import db from '/home/jpb/db'
-const cbConfig = require('dotenv').parse(require('fs').readFileSync('/home/jpb/bots/censorbot/censorbot.env'))
+const cbConfig = require('dotenv').parse(require('fs').readFileSync('/app/prod/discord/censorbot/.env'))
+
+import { Interface } from 'interface'
 
 import { SetupEvents } from '../runs/Events'
 import { Api } from '../api/Api'
@@ -10,19 +12,21 @@ import { Api } from '../api/Api'
 import { PremiumManager } from './PremiumManager'
 import { TagManager } from './TagManager'
 import { Snowflake } from 'discord.js'
+import { Database } from 'interface/dist/Database'
 
 export class JPBBot extends Discord.Client {
-  config: typeof Config
+  config = Config
   db: MongoDb
   guild: Discord.Guild
+  int = new Interface()
+
+  jpbbotDb: Database = this.int.createDb('jpbbot', this.config.db)
 
   premium = new PremiumManager(this)
   tags = new TagManager(this)
 
   constructor () {
     super()
-
-    this.config = Config
 
     this.setup()
   }

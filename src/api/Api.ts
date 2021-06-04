@@ -5,6 +5,8 @@ import Index from './routes/index'
 import Oauth from './routes/oauth'
 import BodyParser from 'body-parser'
 
+import cors from 'cors'
+
 export async function Api (client: JPBBot) {
   const app = Express()
 
@@ -12,6 +14,8 @@ export async function Api (client: JPBBot) {
   app.use(BodyParser.urlencoded({
     extended: true
   }))
+
+  app.use(cors())
 
   Index(client, app)
 
