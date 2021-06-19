@@ -1,33 +1,23 @@
 import Express from 'express'
-import { JPBBot } from '../structs/JPBBot'
+import { JPBBot } from 'client'
 
-import Index from './routes/index'
-import Oauth from './routes/oauth'
-import BodyParser from 'body-parser'
+import Path from 'path'
+
+import { LoadRoutes } from '@jpbberry/load-routes'
 
 import cors from 'cors'
 
 export async function Api (client: JPBBot) {
   const app = Express()
 
-  app.use(BodyParser.json())
-  app.use(BodyParser.urlencoded({
+  app.use(Express.json())
+  app.use(Express.urlencoded({
     extended: true
   }))
 
   app.use(cors())
 
-  Index(client, app)
-
-  const mainRouter = Express.Router()
-  Index(client, mainRouter)
-
-  const oauthRouter = Express.Router()
-  Oauth(client, oauthRouter)
-
-  mainRouter.use('/oauth', oauthRouter)
-
-  app.use('/api', mainRouter)
+  LoadRoutes(app, Path.resolve(__dirname, './routes'), client)
 
   await new Promise(resolve => app.listen(6721, () => resolve(true)))
   console.log('Loaded API')

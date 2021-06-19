@@ -1,5 +1,6 @@
 {
   "files": ["./src/index.ts"],
+  "include": ["./src/api/routes/**/*.ts"],
   "compilerOptions": {
     "moduleResolution": "node",
     "declaration": true,
@@ -7,6 +8,9 @@
     "outDir": "./dist",
     "module": "commonjs",
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "client": ["./src/structs/JPBBot"]
+    }
   }
 }

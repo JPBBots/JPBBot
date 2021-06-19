@@ -1,12 +1,14 @@
 import * as Discord from 'discord.js'
 import MongoDb from 'mongodb/lib/db'
-import { Config } from '../../config'
+import { Config } from '../config'
 import db from '/home/jpb/db'
 const cbConfig = require('dotenv').parse(require('fs').readFileSync('/app/prod/discord/censorbot/.env'))
 
 import { Interface } from 'interface'
 
 import { SetupEvents } from '../runs/Events'
+import { SetupPremiumEvents } from '../runs/PaidPremiumEvents'
+
 import { Api } from '../api/Api'
 
 import { PremiumManager } from './PremiumManager'
@@ -41,6 +43,8 @@ export class JPBBot extends Discord.Client {
     await this.guild.members.fetch()
 
     SetupEvents(this)
+    SetupPremiumEvents(this)
+
     await Api(this)
 
     console.log(`Started (${this.guild.members.cache.size})`)

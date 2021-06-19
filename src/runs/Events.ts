@@ -1,10 +1,11 @@
-import { JPBBot } from '../structs/JPBBot'
+import { JPBBot } from 'client'
 import * as  Discord from 'discord.js'
-import { Snowflake } from 'discord-api-types'
 
 export function SetupEvents (client: JPBBot) {
   // premium
   client.on('guildMemberUpdate', (oldMember, newMember) => {
+    if (newMember.roles.cache.has(client.config.premiumRole)) return
+
     const removedRoles = oldMember
       .roles.cache
       .filter(x => !newMember.roles.cache.has(x.id))
@@ -26,6 +27,8 @@ export function SetupEvents (client: JPBBot) {
 
   client.on('guildMemberRemove', (member) => {
     if (!member.roles.cache.some(x => Object.keys(client.config.premium).includes(x.id))) return
+
+    if (member.roles.cache.has(client.config.premiumRole)) return
   
     client.premium.remove(member.user.id)
   })

@@ -1,4 +1,4 @@
-import * as sensitive from './config.json'
+import * as sensitive from '../config.json'
 export const Config = {
   ...sensitive,
   admin: '415323805943070721',
@@ -13,6 +13,7 @@ export const Config = {
     '623847890628116504': 99, // head helper
     '798393980495724564': 1000000 // million servers
   },
+  premiumRole: '855880100443979828',
   channels: {
     status: '630876009943793694',
     support: '708149822288298138',
