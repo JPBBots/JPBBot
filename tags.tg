@@ -32,7 +32,7 @@ C: Celsius
 K: Kelvin
 F: Fahrenheit (default)
 
-To set the default degree type of the Weather bot do `@Weather setdg [degree]` e.g `@Weather setdg c` will set your default degrees to celsius.
+To set the default degree type of the Weather bot do `@Weather set dg [degree]` e.g `@Weather set dg c` will set your default degrees to celsius.
 
 You can also set it per command, do `[command] c/k/f` e.g `@Weather Brooklyn NY c` will show the weather in Brooklyn NY in celsius.
 ===notworking
