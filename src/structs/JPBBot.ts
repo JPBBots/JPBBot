@@ -2,7 +2,9 @@ import * as Discord from 'discord.js'
 import MongoDb from 'mongodb/lib/db'
 import { Config } from '../config'
 import db from '/home/jpb/db'
-const cbConfig = require('dotenv').parse(require('fs').readFileSync('/app/prod/discord/censorbot/.env'))
+const cbConfig = require('dotenv').parse(
+  require('fs').readFileSync('/app/prod/discord/censorbot/.env')
+)
 
 import { Interface } from 'interface'
 
@@ -20,6 +22,8 @@ export class JPBBot extends Discord.Client {
   config = Config
   db: MongoDb
   guild: Discord.Guild
+  adminRoles: Discord.Role[]
+
   int = new Interface()
 
   jpbbotDb: Database = this.int.createDb('jpbbot', this.config.db)
@@ -27,13 +31,15 @@ export class JPBBot extends Discord.Client {
   premium = new PremiumManager(this)
   tags = new TagManager(this)
 
-  constructor () {
-    super()
+  constructor() {
+    super({
+      intents: 32511
+    })
 
     this.setup()
   }
 
-  private async setup () {
+  private async setup() {
     this.db = await db(cbConfig.DB_USERNAME, cbConfig.DB_PASSWORD, 'censorbot')
 
     await this.login(this.config.token)
@@ -41,6 +47,8 @@ export class JPBBot extends Discord.Client {
     this.guild = this.guilds.cache.get(this.config.guild)
 
     await this.guild.members.fetch()
+
+    this.adminRoles = this.config.adminRoles.map(x => this.guild.roles.cache.get(x.id))
 
     SetupEvents(this)
     SetupPremiumEvents(this)
@@ -55,7 +63,7 @@ export class JPBBot extends Discord.Client {
    * @param name Name of channel
    * @param content Content
    */
-  public async send (name, ...content): Promise<Discord.Message> {
+  public async send(name, ...content): Promise<Discord.Message> {
     const channel: any = this.channels.cache.get(this.config.channels[name])
     return channel.send(...content)
   }
@@ -64,12 +72,13 @@ export class JPBBot extends Discord.Client {
    * Is an admin or not
    * @param id ID of user
    */
-  public async isAdmin (id: Snowflake) {
-    const member = await this.guild.members.fetch(id)
-      .catch(() => {})
-  
+  public async isAdmin(id: Snowflake) {
+    const member = await this.guild.members.fetch(id).catch(() => {})
+
     if (!member) return false
-  
-    return member.roles.cache.has(this.config.admin)
+
+    return member.roles.cache.some((x) =>
+      this.config.adminRoles.some((admin) => admin.id === x.id)
+    )
   }
 }

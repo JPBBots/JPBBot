@@ -24,10 +24,9 @@ export class TagManager {
     return separated.map(part => {
       const split = part.split('\n')
       const [title, image] = split.shift().split(' ')
-      return { title, content: { 
-        content: '', 
-        embed: { description: split.join('\n'), image: { url: image } 
-      } } }
+      return { title, content: {
+        embeds: [{ description: split.join('\n'), image: { url: image } }]
+      } }
     })
   }
 

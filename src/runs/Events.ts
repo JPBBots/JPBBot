@@ -41,7 +41,11 @@ export function SetupEvents (client: JPBBot) {
     }
   })
 
-  client.on('message', async (msg) => {
+  client.on('messageCreate', async (msg) => {
+    if (['.', ',', '•'].includes(msg.content)) {
+      return void msg.delete()
+    }
+
     if (msg.content === 'jpb load') {
       await client.guild.members.fetch()
       msg.reply(':ok_hand:')
@@ -69,7 +73,7 @@ export function SetupEvents (client: JPBBot) {
   }
   const tagCache: TagCache = {}
 
-  client.on('message', async (message) => {
+  client.on('messageCreate', async (message) => {
     if (!message.content.startsWith('$')) return
     const tag = message.content.split(/\$| /)[1]
     
