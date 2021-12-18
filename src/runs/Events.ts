@@ -65,6 +65,10 @@ export function SetupEvents (client: JPBBot) {
         process.exit()
       }
     }
+
+    if (msg.content.match(/^jpb tags/)) {
+      msg.reply(`${client.tags.tags.map(x => x.title).join(', ')}`)
+    }
   })
 
   // tags
