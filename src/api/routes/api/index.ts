@@ -15,6 +15,10 @@ interface AdminUser {
 }
 
 export default function (this: JPBBot, router: E.Router) {
+  router.get('/', (req, res) => {
+    res.json({ healthcheck: true })
+  })
+
   router.get('/admin/:id', async (req, res) => {
     res.send(`${(await this.isAdmin(req.params.id)) ? 1 : 0}`)
   })

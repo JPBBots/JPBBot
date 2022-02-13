@@ -17,6 +17,7 @@ import { PremiumManager } from './PremiumManager'
 import { TagManager } from './TagManager'
 import { Snowflake } from 'discord.js'
 import { Database } from 'interface/dist/Database'
+import { CommandHandler } from '../commands/CommandHandler'
 
 export class JPBBot extends Discord.Client {
   config = Config
@@ -25,11 +26,13 @@ export class JPBBot extends Discord.Client {
   adminRoles: Discord.Role[]
 
   int = new Interface()
-
+  
   jpbbotDb: Database = this.int.createDb('jpbbot', this.config.db)
-
+  
   premium = new PremiumManager(this)
   tags = new TagManager(this)
+
+  commands = new CommandHandler(this)
 
   constructor() {
     super({

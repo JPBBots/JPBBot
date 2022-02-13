@@ -64,4 +64,7 @@ If you want to learn more about Discord slash commands, check [here](https://dis
 In order to view new roles and channels added to your server you have to hit the red reload button next to your server name.
 
 This will reload the server and reload the site, displaying your new roles and channels.
+===custompanel https://img.censor.bot/3Q_XJMGl.gif
+You can create a custom panel message by replying to an **existing** message with `ea!panel [app name]`.
 
+This will add the reaction and allow users to apply via the reaction

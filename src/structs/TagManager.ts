@@ -18,7 +18,7 @@ export class TagManager {
     this.tags = this._parse(tags)
   }
 
-  private _parse (text): Tag[] {
+  private _parse (text: string): Tag[] {
     const separated = text.split('===')
     separated.shift()
     return separated.map(part => {
