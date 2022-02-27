@@ -68,5 +68,6 @@ This will reload the server and reload the site, displaying your new roles and c
 You can create a custom panel message by replying to an **existing** message with `ea!panel [app name]`.
 
 This will add the reaction and allow users to apply via the reaction
-===panelcommand https://img.censor.bot/3agsG3o2
-While the bot is being transitioned to only **slash commands**, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
+===panelcommand https://img.censor.bot/3agsG3o2 
+<:easyapplications:924731136997998622> | **Panel command is not working?**
+While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
