@@ -8,6 +8,10 @@ export const Config = {
       name: 'Founder'
     },
     {
+      id: '947278771491340389',
+      name: 'Co-Owner'
+    },
+    {
       id: '927712204315303986',
       name: 'Designer'
     },

@@ -27,6 +27,7 @@
     "discord.js": "^13.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "influx": "^5.9.3",
     "interface": "github:jpbbots/interface",
     "mongodb": "^3.6.3"
   },
