@@ -21,7 +21,7 @@ In this server we're here to help, you do not need to ask to ask your question, 
 ===helpme https://static.jpbbots.org/helpme.png
 HelpME allows for staff to quickly diagnose your issue etc.
 
-In your server go to any chat and run `+helpme`.
+In your server go to any chat and run `/helpme`.
 In the response should include the 3 letter code.
 Give this to the helper asking, and we will find your issue!
 ===basefilter
