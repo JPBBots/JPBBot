@@ -1,21 +1,27 @@
 import { JPBBot } from './JPBBot'
 import * as fs from 'fs'
+import { MessageEmbed } from 'discord.js'
+
+import FuzzySearch from 'fuzzy-search'
 
 interface Tag {
   title: string
-  content: any
+  embed: MessageEmbed
 }
 
-export class TagManager {
+export class TagManager extends FuzzySearch<Tag> {
   client: JPBBot
   tags: Tag[]
 
   constructor (client: JPBBot) {
+    super([], ['title'])
+
     this.client = client
 
     const tags = fs.readFileSync(require('path').resolve(__dirname, '../../../tags.tg'), 'utf8')
 
     this.tags = this._parse(tags)
+    this.haystack = this.tags
   }
 
   private _parse (text: string): Tag[] {
@@ -24,9 +30,12 @@ export class TagManager {
     return separated.map(part => {
       const split = part.split('\n')
       const [title, image] = split.shift().split(' ')
-      return { title, content: {
-        embeds: [{ description: split.join('\n'), image: { url: image } }]
-      } }
+
+      const embed = new MessageEmbed()
+        .setDescription(split.join('\n'))
+        .setImage(image)
+
+      return { title, embed }
     })
   }
 

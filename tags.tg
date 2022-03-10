@@ -1,73 +1,85 @@
 ===shut https://img.jt3ch.net/shut.png
+
 ===apply
-Interested in applying to be a helper or a developer for JPBBots? Head to the <#603553269004107779> channel and use the respective forms!
+  Interested in applying to be a helper or a developer for JPBBots? Head to the <#603553269004107779> channel and use the respective forms!
+
 ===ask
-Do not ask to ask. Just ask the question. The entire point of the server is to answer your questions. Asking to ask wastes your time and the helpers time.
-Read why it’s an issue here: https://dontasktoask.com
+  Do not ask to ask. Just ask the question. The entire point of the server is to answer your questions. Asking to ask wastes your time and the helpers time.
+  Read why it’s an issue here: https://dontasktoask.com
+
 ===bypass
-Distributed bypasses to any user especially through proxy of the server is not allowed. Doing so can lead to serious punishments as it's against our terms of service.
-If you have bypasses DM them to JPBBerry#0001
+  Distributed bypasses to any user especially through proxy of the server is not allowed. Doing so can lead to serious punishments as it's against our terms of service.
+  If you have bypasses DM them to JPBBerry#0001
+
 ===help
-If you're seeing this you've likely asked for help incorrectly.
-Please explain what you need help with. Just saying `help` or `it's not working` or `please fix` can be guaranteed to not get any help out of.
+  If you're seeing this you've likely asked for help incorrectly.
+  Please explain what you need help with. Just saying `help` or `it's not working` or `please fix` can be guaranteed to not get any help out of.
 
-If you actually want any sort of help, please be sure to
-- Describe the issue
-- What it should be doing instead
-- Any factors that could be contributing to it
-- And any other sort of extra things that should probably be known.
+  If you actually want any sort of help, please be sure to
+  - Describe the issue
+  - What it should be doing instead
+  - Any factors that could be contributing to it
+  - And any other sort of extra things that should probably be known.
 
-In this server we're here to help, you do not need to ask to ask your question, it is simply slower, annoying, and pointless.
-===helpme https://static.jpbbots.org/helpme.png?new
-HelpME allows for staff to quickly diagnose your issue etc.
+  In this server we're here to help, you do not need to ask to ask your question, it is simply slower, annoying, and pointless.
 
-In your server go to any chat and run `/helpme`.
-In the response should include the 3 letter code.
-Give this to the helper asking, and we will find your issue!
+===helpme https://static.jpbbots.org/helpme.png
+  HelpME allows for staff to quickly diagnose your issue etc.
+
+  In your server go to any chat and run `/helpme`.
+  In the response should include the 3 letter code.
+  Give this to the helper asking, and we will find your issue!
+
 ===basefilter
-The base filter is private in order to prevent replication, as the entire bot is open source, the only thing stopping anyone from copying the bot and our work is the filter that has been developed over the past 2 years. For this reason normal users are not allowed to see the filter or the words it contains.
+  The base filter is private in order to prevent replication, as the entire bot is open source, the only thing stopping anyone from copying the bot and our work is the filter that has been developed over the past 2 years. For this reason normal users are not allowed to see the filter or the words it contains.
+
 ===dg
-Degrees:
-C: Celsius
-K: Kelvin
-F: Fahrenheit (default)
+  Degrees:
+  C: Celsius
+  K: Kelvin
+  F: Fahrenheit (default)
 
-To set the default degree type of the Weather bot do `@Weather set dg [degree]` e.g `@Weather set dg c` will set your default degrees to celsius.
+  To set the default degree type of the Weather bot do `@Weather set dg [degree]` e.g `@Weather set dg c` will set your default degrees to celsius.
 
-You can also set it per command, do `[command] c/k/f` e.g `@Weather Brooklyn NY c` will show the weather in Brooklyn NY in celsius.
+  You can also set it per command, do `[command] c/k/f` e.g `@Weather Brooklyn NY c` will show the weather in Brooklyn NY in celsius.
+
 ===notworking
-- Bot does not have permission (make sure the bot role has Administrator)
-- Channel is NSFW (Switch the channel off of NSFW or turn off Ignore NSFW Channel on the [dashboard](https://dash.censor.bot).)
-- The user has the uncensor role (Remove the role or change/remove the Uncensor Role on the [dashboard](https://dash.censor.bot).)
-- If problem with nicknames, ensure the bot role is above all other roles (also owners nicknames cannot be changed by ANYONE).
-- Ensure that the censor method you're looking for is enabled on the [dashboard](https://dash.censor.bot).
-- Make sure you uncensor words (on the [dashboard](https://dash.censor.bot)) are not conflicting with what isn't being censored.
-- If you're looking for pre-built filter acting, ensure that they're enabled on the [dashboard](https://dash.censor.bot)
+  - Bot does not have permission (make sure the bot role has Administrator)
+  - Channel is NSFW (Switch the channel off of NSFW or turn off Ignore NSFW Channel on the [dashboard](https://dash.censor.bot).)
+  - The user has the uncensor role (Remove the role or change/remove the Uncensor Role on the [dashboard](https://dash.censor.bot).)
+  - If problem with nicknames, ensure the bot role is above all other roles (also owners nicknames cannot be changed by ANYONE).
+  - Ensure that the censor method you're looking for is enabled on the [dashboard](https://dash.censor.bot).
+  - Make sure you uncensor words (on the [dashboard](https://dash.censor.bot)) are not conflicting with what isn't being censored.
+  - If you're looking for pre-built filter acting, ensure that they're enabled on the [dashboard](https://dash.censor.bot)
 
 If none of these match/fix your problem, let us know and we'll figure it out!
+
 ===invite
-__**Bot Invites:**__
-Censor Bot: https://censor.bot/invite
-Weather Bot: https://weather.jpbbots.org/invite
-TI-84: https://ti84.jpbbots.org/invite
-Famous Birthdays: https://fb.jpbbots.org/invite
-Frog Bot: https://frog.jpbbots.org/invite 
-Cheese Touch: https://cheesetouch.jpbbots.org/invite
+  __**Bot Invites:**__
+  Censor Bot: https://censor.bot/invite
+  Weather Bot: https://weather.jpbbots.org/invite
+  TI-84: https://ti84.jpbbots.org/invite
+  Famous Birthdays: https://fb.jpbbots.org/invite
+  Frog Bot: https://frog.jpbbots.org/invite 
+  Cheese Touch: https://cheesetouch.jpbbots.org/invite
+
 ===slashcommands https://img.censor.bot/b2nIhRPu.png
-All of the bots are making a transition to **slash commands**.
+  All of the bots are making a transition to **slash commands**.
 
-This means, in order to run commands you must use / as a prefix, the following menu will show up, and you can select the commands from there.
+  This means, in order to run commands you must use / as a prefix, the following menu will show up, and you can select the commands from there.
 
-If you want to learn more about Discord slash commands, check [here](https://dis.gd/slashcommands)
+  If you want to learn more about Discord slash commands, check [here](https://dis.gd/slashcommands)
 
 ===appsreload https://static.jpbbots.org/appsreload.png
-In order to view new roles and channels added to your server you have to hit the red reload button next to your server name.
+  In order to view new roles and channels added to your server you have to hit the red reload button next to your server name.
 
-This will reload the server and reload the site, displaying your new roles and channels.
+  This will reload the server and reload the site, displaying your new roles and channels.
+
 ===custompanel https://img.censor.bot/3Q_XJMGl.gif
-You can create a custom panel message by replying to an **existing** message with `ea!panel [app name]`.
+  You can create a custom panel message by replying to an **existing** message with `ea!panel [app name]`.
 
-This will add the reaction and allow users to apply via the reaction
+  This will add the reaction and allow users to apply via the reaction
+
 ===panelcommand https://img.censor.bot/3agsG3o2 
-<:easyapplications:924731136997998622> | **Panel command is not working?**
-While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
+  <:easyapplications:924731136997998622> | **Panel command is not working?**
+  While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
