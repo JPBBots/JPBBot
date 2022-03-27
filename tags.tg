@@ -85,4 +85,5 @@ If none of these match/fix your problem, let us know and we'll figure it out!
   While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
   
 ===dmperms https://static.jpbbots.org/dmperms.png
-  Like other members, bots cannot message you if your DMs are turned off to the server. Enable them and <@!737539715854761994> will be able to send you the application
+  __**Everything is set up correctly, and users are not receiving the application in their DMs**__
+  Like other members, bots cannot message a user if the user's DMs are turned off to the server. Be sure the user enables them, and <@!737539715854761994> will send them the application
