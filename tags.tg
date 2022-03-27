@@ -84,5 +84,5 @@ If none of these match/fix your problem, let us know and we'll figure it out!
   <:easyapplications:924731136997998622> | **Panel command is not working?**
   While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
   
-===dmperms https://cdn.discordapp.com/attachments/695817223465599019/957710570751156344/Screenshot_23.png
+===dmperms https://static.jpbbots.org/dmperms.png
   Like other members, bots cannot message you if your DMs are turned off to the server. Enable them and <@!737539715854761994> will be able to send you the application
