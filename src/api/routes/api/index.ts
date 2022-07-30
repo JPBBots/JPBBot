@@ -9,7 +9,7 @@ export default function (this: JPBBot, router: E.Router) {
     res.json({ healthcheck: true })
   })
 
-router.get('/admin/:id', async (req, res) => {
+  router.get('/admin/:id', async (req, res) => {
     res.send(`${(await this.isAdmin(req.params.id)) ? 1 : 0}`)
   })
 

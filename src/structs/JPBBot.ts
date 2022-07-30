@@ -51,6 +51,10 @@ export class JPBBot extends Discord.Client {
 
     await this.guild.members.fetch()
 
+    setInterval(async() => {
+      await this.guild.members.fetch()
+    }, 900000)
+
     this.adminRoles = this.config.adminRoles.map(x => this.guild.roles.cache.get(x.id))
 
     SetupEvents(this)
