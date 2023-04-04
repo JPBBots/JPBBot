@@ -80,9 +80,9 @@ If none of these match/fix your problem, let us know and we'll figure it out!
 
   This will add the reaction and allow users to apply via the reaction
 
-===panelcommand https://img.censor.bot/3agsG3o2 
+===panelcommand https://static.jpbbots.org/eapanel.png 
   <:easyapplications:924731136997998622> | **Panel command is not working?**
-  While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `ea!panel` in your server. 
+  While the bot is being transitioned to only slash commands, commands like the panel aren't fully made to use slash commands yet. To use the command run `<@1035638596444626984> panel` in your server. 
   
 ===dmperms https://static.jpbbots.org/dmperms.png
   __**Everything is set up correctly, and users are not receiving the application in their DMs**__
